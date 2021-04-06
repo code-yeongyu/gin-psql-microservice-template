@@ -15,7 +15,7 @@ Go mod와 Docker를 지원합니다.
 -   test
     -   테스트 파일
 
-## 모듈 이름 변경
+## 모듈 명 (패키지 명) 변경
 
 이 프로젝트는 go mod를 사용합니다.
 모듈 명(패키지 명)은 gin_psql_microservice_template 로 되어있고, 이를 변경하기 위한 파이썬 스크립트를 제공합니다.  
