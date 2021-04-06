@@ -2,6 +2,9 @@
 
 # gin-psql-microservice-template
 
+Gin과 PostgreSQL을 활용한 마이크로서비스를 개발 할 때 사용 할 수 있는 템플릿입니다.  
+Go mod와 Docker를 지원합니다.
+
 ## 프로젝트 구조
 
 -   cmd/server
@@ -25,7 +28,7 @@ python3 rename.py <new_name>
 ## 환경 변수
 
 실행시 필요한 환경 변수는 [configs/envs.go](./configs/envs.go) 에서 확인 할 수 있습니다.  
-또한 godotenv 모듈을 사용하기 때문에, .env 파일을 활용 할 수 있습니다.
+또한 godotenv 모듈을 사용하기 때문에 .env 파일을 활용 할 수 있습니다.
 
 ## <a name="execution"></a>실행
 
