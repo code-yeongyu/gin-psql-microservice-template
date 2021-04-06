@@ -1,4 +1,4 @@
-[Put here Release CI Status]
+![Test Status](https://github.com/code-yeongyu/gin-psql-microservice-template/actions/workflows/test.yml/badge.svg)
 
 # gin-psql-microservice-template
 
