@@ -8,7 +8,7 @@ import (
 )
 
 // AbortWithErrorResponse aborts the request with the given error
-func AbortWithErrorResponse(c *gin.Context, statusCode int, errorType string, detail string) {
-	errorResponse := forms.ErrorResponse{ErrorType: errorType, Message: errors.Messages[errorType], Detail: detail}
+func AbortWithErrorResponse(c *gin.Context, statusCode int, errorType errors.CustomError, detail string) {
+	errorResponse := forms.ErrorResponse{ErrorType: string(errorType), Message: errors.Messages[errorType], Detail: detail}
 	c.AbortWithStatusJSON(statusCode, errorResponse)
 }
