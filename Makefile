@@ -5,7 +5,7 @@ run:
 
 build:
 	go mod tidy
-	env GOOS=linux go build -ldflags="-s -w" -o bin/main cmd/server/main.go
+	env CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o bin/main cmd/server/main.go
 
 test:
 	go test ./... -v
