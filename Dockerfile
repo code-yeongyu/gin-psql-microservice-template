@@ -1,5 +1,5 @@
 ### Bulder
-FROM golang:1.16.2-alpine3.13 as builder
+FROM golang:1.16.3-alpine3.13 as builder
 RUN apk update; apk add git; apk add ca-certificates
 
 WORKDIR /usr/src/app
