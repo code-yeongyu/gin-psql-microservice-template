@@ -2,7 +2,6 @@ package utils
 
 import (
 	"fmt"
-	"gin_psql_microservice_template/cmd/server/models"
 	"gin_psql_microservice_template/configs"
 	"sync"
 
@@ -49,15 +48,14 @@ func MigrateModels(db *gorm.DB, models []interface{}) {
 }
 
 // SetupDB setups the gorm DB configuration using the values from the environment
-func (m *DBManager) SetupDB() {
+func (m *DBManager) SetupDB(models []interface{}) {
 	dsn := getDsn()
 	db := OpenDB(dsn)
-	models := models.GetModels()
 	MigrateModels(db, models)
 	m.Instance = db
 }
 
 // InitDB is a shortcut for the GetDB().SetupDB()
-func InitDB() {
-	GetDB().SetupDB()
+func InitDB(models []interface{}) {
+	GetDB().SetupDB(models)
 }
