@@ -2,10 +2,10 @@ package test
 
 import (
 	"fmt"
+	"gin_psql_microservice_template/cmd/server/models"
+	"gin_psql_microservice_template/cmd/server/utils"
+	"gin_psql_microservice_template/configs"
 	"testing"
-	"user_service/cmd/server/models"
-	"user_service/cmd/server/utils"
-	"user_service/configs"
 
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/tj/assert"
@@ -24,14 +24,6 @@ func testClearDB(t *testing.T) {
 	resetDB(db)
 }
 
-func TestDBSingleton(t *testing.T) {
-	db1 := utils.GetDB()
-	db2 := utils.GetDB()
-	utils.GetDB().SetupDB(models.GetModels())
-
-	assert.Equal(t, true, db1.Instance == db2.Instance)
-}
-
 func TestDBSetup(t *testing.T) {
 	configs.Envs["PSQL_DBNAME"] = "test_database"
 
@@ -39,4 +31,14 @@ func TestDBSetup(t *testing.T) {
 	db.SetupDB(models.GetModels())
 
 	resetDB(db.Instance)
+}
+
+func TestDBSingleton(t *testing.T) {
+	configs.Envs["PSQL_DBNAME"] = "test_database"
+
+	db1 := utils.GetDB()
+	db2 := utils.GetDB()
+	utils.GetDB().SetupDB(models.GetModels())
+
+	assert.Equal(t, true, db1.Instance == db2.Instance)
 }
