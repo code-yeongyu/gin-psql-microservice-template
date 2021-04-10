@@ -1,12 +1,16 @@
 package utils
 
-import "reflect"
+import (
+	"reflect"
+
+	"github.com/stoewer/go-strcase"
+)
 
 // GetType returns the type of the given variable
-func GetType(variable interface{}) string {
+func GetTableName(variable interface{}) string {
 	if t := reflect.TypeOf(variable); t.Kind() == reflect.Ptr {
-		return "*" + t.Elem().Name()
+		return strcase.SnakeCase(t.Elem().Name()) + "s"
 	} else {
-		return t.Name()
+		return strcase.SnakeCase(t.Name()) + "s"
 	}
 }
