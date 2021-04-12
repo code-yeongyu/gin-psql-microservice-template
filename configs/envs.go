@@ -17,7 +17,9 @@ func getEnv(envName string, defaultValue string) string {
 // Envs has values for environment variables and the defaults for them
 var Envs = map[string]string{
 	"ENABLE_SWAGGER": getEnv("IS_ENABLE_SWAGGER", "true"),
+	"SERVER_HOST":    getEnv("SERVER_HOST", "localhost"),
 	"SERVER_PORT":    getEnv("PORT", "8080"),
+	"SERVER_VERSION": getEnv("SERVER_VERSION", "1"),
 	"PSQL_HOST":      getEnv("PSQL_HOST", "localhost"),
 	"PSQL_PORT":      getEnv("PSQL_PORT", "5432"),
 	"PSQL_USER":      getEnv("PSQL_USER", "postgres"),
