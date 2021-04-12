@@ -1,5 +1,3 @@
-.PHONY: build clean deploy
-
 run:
 	go run cmd/server/main.go
 
@@ -15,6 +13,3 @@ docs:
 
 clean:
 	rm -rf ./bin
-
-deploy: clean build
-	sls deploy --verbose --aws-s3-accelerate
