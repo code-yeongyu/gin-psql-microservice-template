@@ -1,4 +1,4 @@
-package custom_errors
+package customErrors
 
 import (
 	"gin_psql_microservice_template/cmd/server/forms"

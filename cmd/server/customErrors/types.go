@@ -1,4 +1,4 @@
-package custom_errors
+package customErrors
 
 // CustomError is a type for containing custom errors for http responses
 type CustomError string
